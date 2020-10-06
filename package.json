@@ -12,6 +12,7 @@
     "moment"
   ],
   "author": "jackypan1989@gmail.com",
+  "license": "MIT",
   "main": "dist/business-day.cjs.js",
   "module": "dist/business-day.esm.js",
   "browser": "dist/business-day.umd.js",
