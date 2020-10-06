@@ -1,6 +1,17 @@
 {
   "name": "business-day",
   "version": "1.0.0",
+  "description": "Let your date libaray like Moment.js can count holidays!",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jackypan1989/business-day"
+  },
+  "keywords": [
+    "business-day",
+    "working-day",
+    "moment"
+  ],
+  "author": "jackypan1989@gmail.com",
   "main": "dist/business-day.cjs.js",
   "module": "dist/business-day.esm.js",
   "browser": "dist/business-day.umd.js",
