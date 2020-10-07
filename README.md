@@ -4,14 +4,13 @@ Let your date libaray like [Moment.js](https://momentjs.com/) can count holidays
 
 ## features
 
-- [x] customized workdays (default: Mon. -> Fri.)
-- [x] customized holidays 
-- [x] customized make-up working days
+- [x] configurable workdays (default: Mon. -> Fri.)
+- [x] configurable holidays
+- [x] configurable make-up days
 - [x] support [Moment.js](https://momentjs.com/)
 - [ ] support [Day.js](https://day.js.org/)
 - [ ] support [date-fns](https://date-fns.org/)
-- [ ] muliple locale
-- [ ] fully test
+- [ ] fully tests
 
 ## install
 
@@ -24,8 +23,18 @@ npm install business-day
 
 ```js
 import moment from 'moment'
-import { addBusinessDay } from 'business-day'
+import BusinessDay from 'business-day'
 
-const today = moment('2020-01-01')
-console.log(addBusinessDay(today, 3))
+// 2020-12-01 (Tuesday), 2020-12-02 (Wednesday)
+
+BusinessDay.setConfig({ holidays: ['2020-12-01'] })
+const day1 = moment('2020-11-30')
+console.log(BusinessDay.addBusinessDays(day1, 1))
+// Moment<2020-12-02T00:00:00+08:00>
+
+BusinessDay.setConfig({ holidays: ['2020-12-01', '2020-12-02'] })
+const day2 = moment('2020-11-30')
+console.log(BusinessDay.addBusinessDays(day2, 1))
+// Moment<2020-12-03T00:00:00+08:00>
+
 ```
