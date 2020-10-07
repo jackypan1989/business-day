@@ -1,4 +1,5 @@
-import { defaultConfig } from './config'
+import { config, setConfig } from './config'
+
 import moment from 'moment'
 
 const isSameDay = (date1: moment.Moment, date2: moment.Moment) => {
@@ -6,16 +7,15 @@ const isSameDay = (date1: moment.Moment, date2: moment.Moment) => {
 }
 
 const isWorkingDay = (date: moment.Moment) => {
-  const workingDays = defaultConfig.workingDays
+  const workingDays = config.workingDays
 
   return workingDays.filter(workingDay => {
     return date.weekday() === workingDay
   }).length > 0
 }
 
-
 const isHoliday = (date: moment.Moment) => {
-  const holidays = defaultConfig.holidays
+  const holidays = config.holidays
 
   return holidays.filter(holiday => {
     return isSameDay(moment(holiday), date)
@@ -23,7 +23,7 @@ const isHoliday = (date: moment.Moment) => {
 }
 
 const isMakeupDay = (date: moment.Moment) => {
-  const makeupDays = defaultConfig.makeupDays
+  const makeupDays = config.makeupDays
 
   return makeupDays.filter(makeupDay => {
     return isSameDay(moment(makeupDay), date)
@@ -66,6 +66,8 @@ const subtractBusinessDays = (date: moment.Moment, amount: number) => {
 }
 
 export {
+  setConfig,
+  isBusinessDay,
   addBusinessDays,
   subtractBusinessDays
 }
