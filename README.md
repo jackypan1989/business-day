@@ -1,3 +1,8 @@
+[![](https://img.shields.io/npm/v/business-day)](https://www.npmjs.com/package/business-day)
+[![](https://img.shields.io/npm/dt/business-day)](https://www.npmjs.com/package/business-day)
+![CI](https://github.com/jackypan1989/business-day/workflows/CI/badge.svg)
+[![](https://img.shields.io/github/license/jackypan1989/business-day)](https://github.com/jackypan1989/business-day)
+
 # business-day
 
 Let your date libaray like [Moment.js](https://momentjs.com/) can count holidays! 
