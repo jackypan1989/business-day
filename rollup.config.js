@@ -34,7 +34,7 @@ export default [
 	// CommonJS (for Node) build
 	{
 		input: 'src/main.ts',
-		external: ['moment'],
+		external: ['moment', 'date-fns'],
 		output: [
 			{ file: pkg.main, format: 'cjs' }
 		],
@@ -45,7 +45,7 @@ export default [
 	// ES module (for bundlers) build
 	{
 		input: 'src/main.ts',
-		external: ['moment'],
+		external: ['moment', 'date-fns'],
 		output: [
 			{ file: pkg.module, format: 'es' }
 		],

@@ -17,6 +17,7 @@
   "module": "dist/business-day.esm.js",
   "browser": "dist/business-day.umd.js",
   "dependencies": {
+    "date-fns": "2.16.1",
     "moment": "2.29.0"
   },
   "devDependencies": {
@@ -31,7 +32,9 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "test": "ts-node test/index.ts"
+    "test": "ts-node test/index.ts",
+    "example": "cd example && node index.js",
+    "tsc": "tsc --noEmit"
   },
   "files": [
     "dist"

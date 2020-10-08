@@ -6,10 +6,10 @@ const defaultConfig: Config = {
   makeupDays: []
 }
 
-const config = defaultConfig
+let config = defaultConfig
 
 const setConfig = (newConfig: Config) => {
-  Object.assign(config, newConfig)
+  config = Object.assign(config, newConfig)
 }
 
 export {
