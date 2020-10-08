@@ -1,8 +1,10 @@
 import BusinessDayOfDateFns from '../src/core/date-fns'
+import BusinessDayOfDayJs from '../src/core/dayjs'
 import BusinessDayOfMoment from '../src/core/moment'
 import { config } from '../src/config'
 import configTW from '../src/locale/TW'
 import configUS from '../src/locale/US'
+import dayjs from 'dayjs'
 import { format } from 'date-fns'
 import moment from 'moment'
 
@@ -31,5 +33,11 @@ const day4 = new Date('2020-07-02')
 console.log(config)
 console.log('origin : ' + format(day4, 'yyyy-MM-dd'))
 console.log('target : ' + format(BusinessDayOfDateFns.addBusinessDays(day4, 1), 'yyyy-MM-dd'))
+
+BusinessDayOfDayJs.setConfig(configUS)
+const day5 = dayjs('2020-07-02')
+console.log(config)
+console.log('origin : ' + day5.format('YYYY-MM-DD'))
+console.log('target : ' + dayjs(BusinessDayOfDayJs.addBusinessDays(day5.toDate(), 1)).format('YYYY-MM-DD'))
 
 console.log('end test')
